@@ -12,10 +12,10 @@
 ### Files
 |   #   | File             | Description                                        |
 | :---: | ---------------  | -------------------------------------------------- |
-|   1   | [imagemod](https://github.com/Jarette/4143_PLC/blob/main/Assignments/P01/main.go)| Image Module|
-|   2   | [main.go](https://github.com/Jarette/4143_PLC/blob/main/Assignments/P01/go.mod)| Source code|
-|   3   | [imageManipulator](https://github.com/Jarette/4143_PLC/blob/main/Assignments/P01/go.sum)| imageManipulator Package|
-|   4   | [imageManipulator.go](https://github.com/Jarette/4143_PLC/tree/main/Assignments/P01/mascot)|imageManipulator package code|
+|   1   | [imagemod](https://github.com/Jarette/4143_PLC/tree/main/Assignments/P02/imagemod)| Image Module|
+|   2   | [main.go](https://github.com/Jarette/4143_PLC/tree/main/Assignments/P02/imagemod/main.go)| Source code|
+|   3   | [imageManipulator](https://github.com/Jarette/4143_PLC/tree/main/Assignments/P02/imagemod/imageManipulator)| imageManipulator Package|
+|   4   | [imageManipulator.go](https://github.com/Jarette/4143_PLC/blob/main/Assignments/P02/imagemod/imageManipulator/imageManipulator.go)|imageManipulator package code|
 
 ### Instruction 
 
@@ -23,10 +23,18 @@
 
 ### Example Command
 
-    func main() {
-	// displaying the name of the best mascot on the screen
-	fmt.Println(mascot.BestMascot())
-	// displaying a quote to the screen
-	fmt.Println(quote.Go())
-  }
+    // Create an ImageManipulator instance with an existing image
+    im, err := imageManipulator.NewImageManipulatorWithImage("mustangs.jpg")
+    if err != nil {
+        fmt.Println("Error:", err)
+        return
+    }
+
+    // Draw a rectangle
+    im.DrawRectangle(150, 50, 560, 411)
+
+    // Save the modified image to a file
+    im.SaveToFile("mustangs.png")
+
+   
 
