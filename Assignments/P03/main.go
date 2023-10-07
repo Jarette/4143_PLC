@@ -1,3 +1,32 @@
+/*****************************************************************************
+*                    
+*  Author:           Jarette Greene
+*  Email:            jkgreene0406@my.msutexas.edu / jarettegreene09@gmail.com
+*  Label:            P03
+*  Title:			 Image Ascii Art           
+*  Course:           CMPS 4143
+*  Semester:         Fall 2023
+* 
+*  Description:
+
+*     This Project was to demonstrate the use of the "go get" command
+*    by creating 4 different packages and uploading them to individual
+*    repositories and importing them using the "go get" command to import 
+*    these packages into a singular main.go file and use all these packages
+*    to manipulate a downloaded image and user entered text.
+* 
+*  Usage:
+*    - using "go get" functions to import the neccesary packages 
+*	- use the repo urls to access the functions 
+*	- in terminal write "go run main.go" to execute program
+*	- follow prompts on the screen 
+* 
+*  Packages:           
+*        Img_color	:	 gets RGB values
+*		 Img_get	:	 downloads image from the internet
+*        Img_gray_scale      :  grayscales downloaded image
+*        Img_Text    : displays colored image and creates text png
+*****************************************************************************/
 package main
 
 import (
@@ -33,6 +62,7 @@ func (i ImgMan) Colortext() {
 
 // DisplayPixels displays the RGB values of every pixel in downloaded image
 func (i ImgMan) DisplayPixels() {
+	Img_get.Getpic(i.URL)
 	Img_colors.Colors()
 }
 
@@ -59,15 +89,18 @@ func main() {
 		// may have to type of the URL.
 		println("Enter URL for the image you would like to download ")
 		fmt.Scan(&url)
-		// initializing ImgMan object
+		// initializing ImgMan object with a URL
 		image := &ImgMan{URL: url}
 		// Picking if you would like the Graysclae or RGB values
 		println("Enter 1. to use grayscale, Enter 2. to get the RGB of every pixel")
 		fmt.Scan(&choice)
 		if choice == 1 {
-			image.MakeGray()
+			//downloads an image from the internet using a url and grayscales that image 
+			image.MakeGray() 
 		} else if choice == 2 {
-			image.DisplayPixels()
+			// downloads an image from the internet using a url and displays the RGB values 
+			// of each pixels 
+			image.DisplayPixels() 
 		} else {
 			// incase of invalid input
 			fmt.Println("Error")
@@ -77,12 +110,15 @@ func main() {
 	} else if choice == 2 {
 		println("Enter the text you would like to manipulate ")
 		fmt.Scan(&text)
+		// initializing ImgMan object with a Text
 		image := &ImgMan{Text: text}
 		println("Enter 1. to use print to screen, Enter 2. print to a png")
 		fmt.Scan(&choice)
 		if choice == 1 {
+			// displays text stored in the image object to the screen in color
 			image.Colortext()
 		} else if choice == 2 {
+			// displays text stored in the image object to a png.
 			image.Imgtxt()
 		} else {
 			fmt.Println("Error")
