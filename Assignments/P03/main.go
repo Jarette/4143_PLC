@@ -30,11 +30,19 @@
 package main
 
 import (
+	//fmt package: allows for input and output from and to the console respectively
 	"fmt"
 
+	// github.com/Jarette/Img_colors package: allows to get the RGB values of an image
 	"github.com/Jarette/Img_colors"
+
+	// github.com/Jarette/Img_get package: contains function to download an image using URL
 	"github.com/Jarette/Img_get"
+
+	// github.com/Jarette/Img_gray_scale: contains functions to apply grayscale to an image
 	"github.com/Jarette/Img_gray_scale"
+
+	// github.com/Jarette/Img_text : contains fucntions to print colored text to screen 
 	"github.com/Jarette/Img_text"
 )
 
