@@ -5,8 +5,8 @@ import (
     "io"
     "os"
 )
-
-func HttpRequest(url, filename string){
+//HTTPRequest downloads an image from the internet using a url
+func HTTPRequest(url, filename string){
 	req, err := http.NewRequest("GET",url,nil)
 	if err != nil{
 		fmt.Println(err)
