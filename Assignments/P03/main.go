@@ -51,35 +51,117 @@ type ImgMan struct {
 	URL  string
 	Text string
 }
-
+/*
+*	MakeGray
+*
+*	Description: Method used to take an image and make it grayscale
+*	
+*	Paramenters:
+*			
+*			n/a
+*	
+*	Output:
+*			
+*			void 		:		returns nothing
+*
+*/
 // MakeGray method to make grayscale
 func (i ImgMan) MakeGray() {
 	Img_get.Getpic(i.URL)
 	Img_gray_scale.Grayscale()
 }
-
+/*
+*	Imgtxt
+*
+*	Description: places image on colored text on an image
+*	
+*	Paramenters:
+*			
+*			n/a
+*	
+*	Output:
+*			
+*			void 		:		returns nothing
+*
+*/
 // Imgtxt creates image of text
 func (i ImgMan) Imgtxt() {
 	Img_text.Color_imgtext(i.Text)
 }
 
 // Colortext displays color text to the terminal
+/*
+*	Colortext
+*
+*	Description: prints colored text to terminal
+*	
+*	Paramenters:
+*			
+*			n/a
+*	
+*	Output:
+*			
+*			void 		:		returns nothing
+*
+*/
 func (i ImgMan) Colortext() {
 	Img_text.Screen_text(i.Text)
 }
 
 // DisplayPixels displays the RGB values of every pixel in downloaded image
+/*
+*	DisplayPixels
+*
+*	Description: Displays the RGB values of an image
+*	
+*	Paramenters:
+*			
+*			n/a
+*	
+*	Output:
+*			
+*			void 		:		returns nothing
+*
+*/
 func (i ImgMan) DisplayPixels() {
 	Img_get.Getpic(i.URL)
 	Img_colors.Colors()
 }
 
 // SetURL setter method for URL
+/*
+*	SetURL
+*
+*	Description: setter function to get the url 
+*	
+*	Paramenters:
+*			
+*			url string 	: 	the url of the image to be manipulated 
+*	
+*	Output:
+*			
+*			void 		:		returns nothing
+*
+*/
 func (i ImgMan) SetURL(url string) {
 	i.URL = url
 }
 
 // SetText setter method for text
+/*
+*	SetText
+*
+*	Description: setter function to get the text
+*	
+*	Paramenters:
+*			
+*			url text 	: 	the text to be put on the image 
+*	
+*	Output:
+*			
+*			void 		:		returns nothing
+*
+*/
 func (i ImgMan) SetText(text string) {
 	i.Text = text
 }
