@@ -15,7 +15,7 @@
 |   1   | [main.go](https://github.com/Jarette/4143_PLC/blob/main/Assignments/P04/main.go)| source code|
 |   2   | [go.mod](https://github.com/Jarette/4143_PLC/blob/main/Assignments/P04/go.mod)| go mod file|
 |   3   | [go.work](https://github.com/Jarette/4143_PLC/blob/main/Assignments/P04/go.work)|used to manage dependencies|
-|   4   | [ImgDownload](https://github.com/Jarette/4143_PLC/blob/main/Assignments/P04/gImgDownload)|contains package with functions used to downnload an image|
+|   4   | [ImgDownload](https://github.com/Jarette/4143_PLC/tree/main/Assignments/P04/ImgDownload)|contains package with functions used to downnload an image|
 
 ### Instruction 
     - copy URL of image you would like to download 
