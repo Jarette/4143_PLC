@@ -55,7 +55,21 @@ type ImageManipulator struct {
 // Updating constructor.
 
 //NewImageManipulatorWithImage : finds the image in your system and creates for the program 
-// returns an error if unable to be found 
+/*
+*	NewImageManipulatorWithImage
+*
+*	Description: Finds an image saved on system and opens it so that it 
+*                can be manipulated 
+*	
+*	Paramenters:
+*			
+*			imagePath  	: 	The name of the image
+*	
+*	Output:
+*			
+*			error 		:		returns an error if it does not succeed 
+*
+*/
 func NewImageManipulatorWithImage(imagePath string) (*ImageManipulator, error) {
     //Creating the path to the image 
     img, err := gg.LoadImage(imagePath)
@@ -70,11 +84,39 @@ func NewImageManipulatorWithImage(imagePath string) (*ImageManipulator, error) {
 }
 
 // SaveToFile saves the manipulated image to a file.
+/*
+*	SaveToFile
+*
+*	Description: saves the manipulated image to your system as a PNG
+*	
+*	Paramenters:
+*			
+*			filename string  	: 	name of the file
+*	
+*	Output:
+*			
+*			error 		:		returns an error if it does not succeed 
+*
+*/
 func (im *ImageManipulator) SaveToFile(filename string) error {
     return im.Image.SavePNG(filename)
 }
 
 // DrawRectangle draws a rectangle on the image.
+/*
+*	DrawRectangle
+*
+*	Description: places a rectangle on saved image 
+*	
+*	Paramenters:
+*			
+*			x,y,width,height float64  	: 	the size of the rectangle
+*	
+*	Output:
+*			
+*			void  		:		No Return 
+*
+*/
 func (im *ImageManipulator) DrawRectangle(x, y, width, height float64) {
     im.Image.DrawRectangle(x, y, width, height)
     im.Image.Stroke()
